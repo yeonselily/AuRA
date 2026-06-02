@@ -1,5 +1,5 @@
 # AuRA
-It's a web-based music discovery app that takes the user’s mood, activities, and existing music preferences as input. 
+A music discovery app that takes a plaintext description of the user’s mood and generates a playlist that fits the mood in one click. 
 
 ## Build
 `git clone https://github.com/yeonselily/AuRA.git`
