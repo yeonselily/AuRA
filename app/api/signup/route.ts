@@ -15,10 +15,21 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "All fields are required" }, { status: 400 });
   }
 
+  //validate email using regex
   const emailRegex = /^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$/;
-
   if (!emailRegex.test(email)) {
     return NextResponse.json({ error: "Invalid email" }, { status: 400 });
+  }
+
+  //validate username using regex
+  const usernameRegex = /[a-zA-Z0-9_]/;
+  if (!usernameRegex.test(username)) {
+    return NextResponse.json({ error: "Username can only contain letters, numbers, and underscores" }, { status: 400 });
+  }
+
+  //enforce username length cap
+  if (username.length > 30) {
+    return NextResponse.json({ error: "Username cannt have more than 30 characters" }, { status: 400 });
   }
 
   //try to find a user in the db with the given email, fetch the first result from the query as [existing]
