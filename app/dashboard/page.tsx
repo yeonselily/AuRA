@@ -92,10 +92,10 @@ export default async function DashboardPage() {
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))", gap: "1rem" }}>
             {playlists.map((p) => (
               <Link key={p.id} href={`/playlist/${p.id}`}>
-                <div style={{ border: "1px solid #ccc", borderRadius: "8px", padding: "1rem", cursor: "pointer" }}>
+                <div className="playlist">
                   <PlaylistCover images={imagesById.get(p.id) ?? []} name={p.name} />
                   <h3>{p.name}</h3>
-                  <p style={{ fontSize: "0.8rem", color: "#666" }}>
+                  <p>
                     {new Date(p.created).toLocaleDateString()}
                   </p>
                 </div>

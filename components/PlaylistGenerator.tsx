@@ -90,7 +90,7 @@ export default function PlaylistGenerator() {
   }
 
   return (
-    <div>
+    <div className="generator">
       <h2>Generate a Playlist</h2>
       <textarea
         value={mood}

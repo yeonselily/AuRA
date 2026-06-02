@@ -2,10 +2,29 @@
     padding: 1em;
     border-radius: 4px;
     border: none;
-    background-color: var(--resurrect-red);
+    background-color: var(--resurrect-jade);
     color: var(--aura-off-white);
 }
 
 #signout:hover {
-    background-color: var(--aura-mauve);
+    background-color: var(--resurrect-light-blue);
+    color: var(--resurrect-black);
+}
+
+.generator textarea, .generator input {
+    background-color: rgb(177, 233, 227);
+    border: 3px solid rgb(122, 160, 177);
+}
+
+.generator button {
+    background-color: rgb(21, 168, 181);
+    background-color: var(--resurrect-jade);
+    color: var(--aura-off-white);
+    border: none;
+    padding: 4px;
+}
+
+.generator button:hover {
+    background-color: var(--resurrect-light-blue);
+    color: var(--resurrect-black);
 }
