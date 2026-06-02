@@ -8,4 +8,4 @@ It's a web-based music discovery app that takes the user’s mood, activities, a
 
 `npm run dev` or `npm run start`
 
-Open [http://localhost:3000]([http://localhost:3000])
+Open http://localhost:3000
