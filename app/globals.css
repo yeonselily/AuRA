@@ -1,0 +1,48 @@
+:root {
+    --aura-pale-yellow: rgb(255 253 240);
+    --aura-yellow: rgb(255 249 196);
+    --aura-off-white: rgb(253 249 243);
+    --aura-off-gray: rgb(241 237 231);
+    --aura-blue: rgb(181 231 254);
+    --aura-teal: rgb(214 255 254);
+    --aura-orange: rgb(216 115 0);
+    --aura-purple: rgb(69, 41, 63);
+    --aura-mauve: rgb(117, 60, 84);
+
+    --resurrect-deep-black: #313638;
+    --resurrect-black: #2e222f;
+    --resurrect-off-black: #3e3546;
+    --resurrect-off-black-purple: #7f708a;
+    --resurrect-deep-orange: #ea4f36;
+    --resurrect-orange: #fb6b1d;
+    --resurrect-yellow: #f9c22b;
+    --resurrect-lime-green: #d5e04b;
+    --resurrect-pale-yellow: #fbff86;
+    --resurrect-jade: #239063;
+    --resurrect-green: #1ebc73;
+    --resurrect-light-green: #91db69;
+    --resurrect-teal: #0b8a8f;
+    --resurrect-light-teal: #0eaf9b;
+    --resurrect-bluish-green: #30e1b9;
+    --resurrect-mint: #8ff8e2;
+    --resurrect-weird-purple: #484a77;
+    --resurrect-dark-blue: #4d65b4;
+    --resurrect-blue: #4d9be6;
+    --resurrect-light-blue: #8fd3ff;
+    --resurrect-plum: #6b3e75;
+    --resurrect-purple: #905ea9;
+    --resurrect-lavender: #a884f3;
+    --resurrect-purplish-pink: #eaaded;
+    --resurrect-blush: #ed8099;
+    --resurrect-red: #c32454;
+    --resurrect-pink: #f04f78;
+    --resurrect-orangish-pink: #f68181;
+    --resurrect-pinkish-orange: #fca790;
+
+    --header-background: #C5E0F3;
+    --footer-background: #F8FFFF;
+}
+
+html {
+    background-color: var(--aura-pale-yellow);
+}

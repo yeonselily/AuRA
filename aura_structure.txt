@@ -1,0 +1,71 @@
+mango.peddling103@passinbox.com
+ko8+#Jr-Rn-q_<w
+
+├── app/                          # Next.js App Router pages & API
+│   ├── api/
+│   │   ├── auth/[...nextauth]/   # NextAuth handler
+│   │   ├── generate/             # AI playlist generation endpoint
+│   │   ├── playlist/             # Save playlist to DB
+│   │   ├── feedback/             # Song rating submission
+│   │   └── signup/               # User registration
+│   ├── dashboard/page.tsx        # Main app page
+│   ├── login/page.tsx
+│   ├── signup/page.tsx
+│   ├── playlist/[id]/page.tsx    # Individual playlist view
+│   ├── page.tsx                  # Root (redirects to /dashboard)
+│   ├── layout.tsx
+│   └── globals.css
+├── components/
+│   ├── PlaylistGenerator.tsx     # Mood input + playlist UI
+│   ├── SongRating.tsx            # 1–10 rating widget
+│   └── SignOutButton.tsx
+├── db/
+│   ├── schema.ts                 # Drizzle table definitions
+│   └── index.ts                  # Neon DB connection
+├── lib/
+│   ├── auth.ts                   # NextAuth config
+│   └── spotify.ts                # Spotify API + token caching
+├── types/
+│   └── next-auth.d.ts            # Session/JWT type extensions
+├── public/                       # Default Next.js SVG assets (unused)
+├── CLAUDE.md, AGENTS.md, README.md
+└── Config: next.config.ts, tsconfig.json, drizzle.config.ts, eslint.config.mjs, postcss.config.mjs
+
+// HOW DOES LOGIN WORK? //
+
+ln39-end
+Renders a login form with email and password fields, a submit button, and a link to /signup.
+
+async function handleSubmit()
+On submit, handleSubmit runs:
+─Prevents the default browser form submission (e.preventDefault()) // ln15
+─Reads the email and password values directly from the form DOM // ln18-20
+
+ln23-26
+Calls NextAuth's signIn("credentials", ...) with redirect: false, which sends the credentials to the authorize() function in lib/auth.ts for validation against the database.
+
+ln30-31
+On success (res?.ok), redirects the user to /dashboard via the Next.js router.
+
+ln34
+On failure, sets an error string in state ("Invalid email or password") which renders below the form.
+
+// WHAT DOES AUTH.TS DO? //
+https://www.youtube.com/watch?v=TLGFTH4s_0Y
+
+Configures NextAuth with JSON web token-based sessions (no database session table — the session lives in a signed cookie).
+
+Defines a Credentials provider, which is what gets called when the login form submits. The authorize() function runs server-side:
+  Returns null immediately if email or password are missing
+  Queries the users table for a row matching the submitted email
+  Returns null if no user is found
+  Uses bcrypt.compare() to check the submitted password against the stored hash
+  Returns null if the password is wrong
+  On success, returns { id, name, email } — this object becomes the user argument in the next step
+
+jwt callback — fires when the JWT is first created (right after authorize succeeds). It copies user.id onto the token so it persists in the cookie.
+
+session callback — fires whenever getServerSession() or useSession() is called. It copies token.id onto the session.user object, making the user's database ID accessible throughout the app.
+
+Custom sign-in page is set to /login, so NextAuth redirects unauthenticated users there instead of its default page.
+

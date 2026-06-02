@@ -4,6 +4,8 @@ import { useRouter } from "next/navigation";
 import { signIn } from "next-auth/react";
 import Link from "next/link";
 
+import '../onboarding.css';
+
 export default function LoginPage() {
 
   const router = useRouter();
@@ -38,14 +40,24 @@ export default function LoginPage() {
 
   return (
     <main>
-      <h1>Log In</h1>
-      <form onSubmit={handleSubmit}>
-        <input name="email" type="email" placeholder="Email" required />
-        <input name="password" type="password" placeholder="Password" required />
-        <button type="submit">Log In</button>
-      </form>
-      {error && <p>{error}</p>}
-      <p>Don't have an account? <Link href="/signup">Sign up</Link></p>
+      <section>
+        <h1>Log In</h1>
+        <form onSubmit={handleSubmit}>
+          <p>
+          <label htmlFor="email"> Email: </label>
+          <input id="email" name="email" type="email" placeholder="Email" required />
+          </p>
+          <p>
+          <label htmlFor="password"> Password: </label>
+          <input id="password" name="password" type="password" placeholder="Password" required />
+          </p>
+          <button type="submit">Log In</button>
+        </form>
+        {error && <p>{error}</p>}
+      </section>
+      <section>
+        <p>Don't have an account? <Link href="/signup">Sign up</Link></p>
+      </section>
     </main>
   );
 

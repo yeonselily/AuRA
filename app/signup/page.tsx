@@ -3,6 +3,9 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 
+import '../globals.css';
+import '../onboarding.css';
+
 export default function SignupPage() {
 
   const router = useRouter();
@@ -39,16 +42,28 @@ export default function SignupPage() {
 
   return (
     <main>
-      <h1>Sign Up</h1>
-      <form onSubmit={handleSubmit}>
-        <input name="username" type="text" placeholder="Username" required />
-        <input name="email" type="email" placeholder="Email" required />
-        <input name="password" type="password" placeholder="Password" required />
-        <button type="submit">Create Account</button>
-      </form>
-      {error && <p>{error}</p>}
-      <p>Already have an account? <Link href="/login">Log in</Link></p>
+      <section>
+        <h1>Sign Up</h1>
+        <form onSubmit={handleSubmit}>
+          <p>
+          <label htmlFor="username">Username: </label>
+          <input id="username" name="username" type="text" placeholder="Username" required />
+          </p>
+          <p>
+          <label htmlFor="email">Email: </label>
+          <input id="email" name="email" type="email" placeholder="Email" required />
+          </p>
+          <p>
+          <label htmlFor="password">Password: </label>
+          <input id="password" name="password" type="password" placeholder="Password" required />
+          </p>
+          <button type="submit">Create Account</button>
+        </form>
+        {error && <p>{error}</p>}
+      </section>
+      <section>
+        <p>Already have an account? <Link href="/login">Log in</Link></p>
+      </section>
     </main>
   );
-
 }
