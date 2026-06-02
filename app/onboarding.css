@@ -14,13 +14,13 @@
     box-sizing: border-box;
     width: 200px;
     padding: 5px;
-    border: 1px solid var(--aura-orange);
+    border: 1px solid var(--resurrect-jade);
     border-radius: 4px;
 }
 
 .onboarding button {
    width: 160px;
-   background-color: var(--aura-purple);
+   background-color: var(--resurrect-jade);
    color: var(--aura-off-white);
    padding: 15px;
    margin: 10px 0;
@@ -29,7 +29,8 @@
 }
 
 .onboarding button:hover {
-    background-color: var(--resurrect-purple);
+    background-color: var(--resurrect-light-blue);
+    color: var(--resurrect-black);
 }
 
 @media only screen and (min-width: 1000px) {
@@ -39,7 +40,7 @@
     }
 
     main.onboarding > section:last-child {
-        border-left: 3px solid var(--aura-mauve);
+        border-left: 3px solid var(--resurrect-teal);
         display: flex;
         align-items: center;
         justify-content: center;

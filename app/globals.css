@@ -41,12 +41,12 @@
 }
 
 html {
-    background-color: var(--aura-pale-yellow);
+    background-color: var(--ressurect-mint);
 }
 
 header {
     color: var(--aura-off-white);
-    background-color: var(--aura-orange);
+    background-color: var(--resurrect-jade);
     padding: 0.5rem 1rem;
     margin-top: 0;
 }
