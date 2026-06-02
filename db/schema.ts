@@ -21,10 +21,11 @@ export const playlist = pgTable('playlist', {
 });
 
 export const song = pgTable('song', {
-  id:        serial('id').primaryKey(),
-  spotifyID: varchar('spotifyID', { length: 30 }).notNull(),
-  title:     text('title').notNull(),
-  artist:    text('artist').notNull(),
+  id:         serial('id').primaryKey(),
+  spotifyID:  varchar('spotifyID', { length: 30 }).notNull(),
+  title:      text('title').notNull(),
+  artist:     text('artist').notNull(),
+  albumImage: text('albumImage'), //track.album.images[0].url; nullable for songs saved before this column existed
 });
 
 export const feedback = pgTable('feedback', {
