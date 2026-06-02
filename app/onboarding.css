@@ -26,7 +26,6 @@ button {
    margin: 10px 0;
    border: none;
    border-radius: 4px;
-   cursor: pointer;
 }
 
 button:hover {
@@ -34,13 +33,6 @@ button:hover {
 }
 
 @media only screen and (min-width: 1000px) {
-
-    main {
-        max-width: 800px;
-        margin: 0 auto;
-        display: flex;
-        align-items: stretch;
-    }
 
     main > section {
         flex: 1;
@@ -56,5 +48,12 @@ button:hover {
     form {
         display: flex;
         flex-direction:column;
+    }
+
+    main {
+        max-width: 800px;
+        margin: 1em auto 0 auto;
+        display: flex;
+        align-items: stretch;
     }
 }

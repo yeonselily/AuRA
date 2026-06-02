@@ -38,11 +38,38 @@
     --resurrect-pink: #f04f78;
     --resurrect-orangish-pink: #f68181;
     --resurrect-pinkish-orange: #fca790;
-
-    --header-background: #C5E0F3;
-    --footer-background: #F8FFFF;
 }
 
 html {
     background-color: var(--aura-pale-yellow);
+}
+
+header {
+    color: var(--aura-off-white);
+    background-color: var(--aura-orange);
+    padding: 0.5rem 1rem;
+    margin-top: 0;
+}
+
+body {
+    font-family: var(--font-geist-sans);
+}
+
+button {
+    cursor: pointer;
+}
+
+button:disabled {
+    cursor: not-allowed;
+}
+
+header p {
+    font-size: 20px;
+}
+
+@media only screen and (min-width: 1000px) {
+
+    body {
+        margin: 0;
+    }
 }

@@ -8,6 +8,9 @@ import SignOutButton from "@/components/SignOutButton";
 import PlaylistGenerator from "@/components/PlaylistGenerator";
 import Link from "next/link";
 
+import '../globals.css';
+import '../active.css';
+
 export default async function DashboardPage() {
 
   //get the user session
