@@ -52,8 +52,16 @@ export async function POST(req: Request) {
           spotifyID: track.spotifyID,
           title: track.title,
           artist: track.artist,
+          albumImage: track.albumArt ?? null,
         })
         .returning(); //and return the song ID
+    } else if (!existingSong.albumImage && track.albumArt) {
+      //backfill art for songs stored before albumImage existed
+      [existingSong] = await db
+        .update(song)
+        .set({ albumImage: track.albumArt })
+        .where(eq(song.id, existingSong.id))
+        .returning();
     }
 
     //link the song to the playlist using the bridge table, passing in the track index as playlist position

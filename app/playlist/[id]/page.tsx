@@ -7,6 +7,9 @@ import { eq, and, asc } from "drizzle-orm";
 import Link from "next/link";
 import SongRating from "@/components/SongRating";
 
+import '../../globals.css';
+import '../../active.css';
+
 //page for a specific playlist (based on playlist id)
 export default async function PlaylistPage({ params }: { params: Promise<{ id: string }> }) {
 
