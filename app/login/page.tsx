@@ -4,8 +4,6 @@ import { useRouter } from "next/navigation";
 import { signIn } from "next-auth/react";
 import Link from "next/link";
 
-import '../onboarding.css';
-
 export default function LoginPage() {
 
   const router = useRouter();
@@ -39,7 +37,7 @@ export default function LoginPage() {
   }
 
   return (
-    <main>
+    <main className="onboarding">
       <section>
         <h1>Log In</h1>
         <form onSubmit={handleSubmit}>

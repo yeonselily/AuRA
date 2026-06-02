@@ -3,9 +3,6 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 
-import '../globals.css';
-import '../onboarding.css';
-
 export default function SignupPage() {
 
   const router = useRouter();
@@ -41,7 +38,7 @@ export default function SignupPage() {
   }
 
   return (
-    <main>
+    <main className="onboarding">
       <section>
         <h1>Sign Up</h1>
         <form onSubmit={handleSubmit}>

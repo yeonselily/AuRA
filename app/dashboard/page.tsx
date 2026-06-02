@@ -8,9 +8,6 @@ import SignOutButton from "@/components/SignOutButton";
 import PlaylistGenerator from "@/components/PlaylistGenerator";
 import Link from "next/link";
 
-import '../globals.css';
-import '../active.css';
-
 //renders up to four album covers as a square 2x2 mosaic
 function PlaylistCover({ images, name }: { images: string[]; name: string }) {
 
